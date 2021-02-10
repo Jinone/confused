@@ -48,9 +48,9 @@ func (n *NPMLookup) PackagesNotInPublic() []string {
 
 func (n *NPMLookup) isAvailableInPublic(pkgname string) bool {
 	if n.Verbose {
-		fmt.Print("Checking: https://www.npmjs.com/package/" + pkgname + " : ")
+		fmt.Print("Checking: https://registry.npmjs.org/" + pkgname + " : ")
 	}
-	resp, _ := http.Get("https://www.npmjs.com/package/" + pkgname)
+	resp, _ := http.Get("https://registry.npmjs.org/" + pkgname)
 	if n.Verbose {
 		fmt.Printf("%s\n", resp.Status)
 	}
